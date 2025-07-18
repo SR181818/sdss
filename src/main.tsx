@@ -4,40 +4,42 @@ import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Theme } from '@radix-ui/themes'
 import { IotaClientProvider, WalletProvider } from '@iota/dapp-kit'
+import { getFullnodeUrl } from '@iota/iota-sdk/client'
 
 import App from './App'
 import './index.css'
 
-// Your Shimmer Testnet config
+// IOTA Network Configuration
 const networks = {
   'shimmer-testnet': {
-    type: 'testnet',
-    url: 'https://api.testnet.shimmer.network'
+    url: getFullnodeUrl('testnet'),
+    variables: {
+      IOTA_FAUCET_URL: 'https://faucet.testnet.shimmer.network'
+    }
   }
 }
 
-// Instantiate React Query client
-const queryClient = new QueryClient()
+// React Query Configuration
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 3,
+      refetchOnWindowFocus: false,
+      staleTime: 30000, // 30 seconds
+    },
+  },
+})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-
-    {/* 1) Must wrap everything in QueryClientProvider */}
     <QueryClientProvider client={queryClient}>
-
-      {/* 2) Then IotaClientProvider so useIotaClientContext exists */}
-      <IotaClientProvider networks={networks}>
-
-        {/* 3) Then WalletProvider so ConnectButton & auto-connect work */}
-        <WalletProvider>
-
-          {/* 4) (Optional) Theming & Routing */}
-          <Theme appearance="dark" accentColor="blue" radius="medium">
+      <IotaClientProvider networks={networks} defaultNetwork="shimmer-testnet">
+        <WalletProvider autoConnect>
+          <Theme appearance="light" accentColor="indigo" radius="medium">
             <BrowserRouter>
               <App />
             </BrowserRouter>
           </Theme>
-
         </WalletProvider>
       </IotaClientProvider>
     </QueryClientProvider>
