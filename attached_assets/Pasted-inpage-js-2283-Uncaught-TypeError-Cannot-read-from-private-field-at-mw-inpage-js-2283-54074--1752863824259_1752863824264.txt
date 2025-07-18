@@ -1,0 +1,66 @@
+inpage.js:2283 Uncaught TypeError: Cannot read from private field
+    at mw (inpage.js:2283:54074)
+    at dw (inpage.js:2283:54111)
+    at get isMetaMask (inpage.js:2283:56930)
+    at Reflect.get (<anonymous>)
+    at Object.get (injected.js:1:7150485)
+    at Hl.setEthereumWallet (inpage.js:2283:61031)
+    at inpage.js:2283:59431
+chunk-NFC5BX5N.js?v=ece9ce37:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+Dashboard.tsx:92 Failed to load stats: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+    at Object.throwInvalidHookError (chunk-NFC5BX5N.js?v=ece9ce37:11501:17)
+    at useContext (chunk-CMM6OKGN.js?v=ece9ce37:1062:29)
+    at useIotaClientContext (@iota_dapp-kit.js?v=7df73e0d:13621:52)
+    at useIotaClient (@iota_dapp-kit.js?v=7df73e0d:13630:10)
+    at loadStats (Dashboard.tsx:52:22)
+    at Dashboard.tsx:46:7
+    at commitHookEffectListMount (chunk-NFC5BX5N.js?v=ece9ce37:16915:34)
+    at commitPassiveMountOnFiber (chunk-NFC5BX5N.js?v=ece9ce37:18156:19)
+    at commitPassiveMountEffects_complete (chunk-NFC5BX5N.js?v=ece9ce37:18129:17)
+    at commitPassiveMountEffects_begin (chunk-NFC5BX5N.js?v=ece9ce37:18119:15)
+loadStats @ Dashboard.tsx:92
+injected.js:1  POST https://sncziafbwxgjkvymkolp.supabase.co/rest/v1/stake_tokens?columns=%22owner_address%22%2C%22amount%22%2C%22is_used%22&select=* 404 (Not Found)
+value @ injected.js:1
+(anonymous) @ @supabase_supabase-js.js?v=b45d6461:3922
+(anonymous) @ @supabase_supabase-js.js?v=b45d6461:3943
+fulfilled @ @supabase_supabase-js.js?v=b45d6461:3895
+Promise.then
+step @ @supabase_supabase-js.js?v=b45d6461:3908
+(anonymous) @ @supabase_supabase-js.js?v=b45d6461:3910
+__awaiter6 @ @supabase_supabase-js.js?v=b45d6461:3892
+(anonymous) @ @supabase_supabase-js.js?v=b45d6461:3933
+then @ @supabase_supabase-js.js?v=b45d6461:89
+contract.ts:83 Error storing stake token in Supabase: {}
+createStake @ contract.ts:83
+await in createStake
+handleSubmit @ TicketForm.tsx:104
+callCallback2 @ chunk-NFC5BX5N.js?v=ece9ce37:3674
+invokeGuardedCallbackDev @ chunk-NFC5BX5N.js?v=ece9ce37:3699
+invokeGuardedCallback @ chunk-NFC5BX5N.js?v=ece9ce37:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-NFC5BX5N.js?v=ece9ce37:3736
+executeDispatch @ chunk-NFC5BX5N.js?v=ece9ce37:7014
+processDispatchQueueItemsInOrder @ chunk-NFC5BX5N.js?v=ece9ce37:7034
+processDispatchQueue @ chunk-NFC5BX5N.js?v=ece9ce37:7043
+dispatchEventsForPlugins @ chunk-NFC5BX5N.js?v=ece9ce37:7051
+(anonymous) @ chunk-NFC5BX5N.js?v=ece9ce37:7174
+batchedUpdates$1 @ chunk-NFC5BX5N.js?v=ece9ce37:18913
+batchedUpdates @ chunk-NFC5BX5N.js?v=ece9ce37:3579
+dispatchEventForPluginEventSystem @ chunk-NFC5BX5N.js?v=ece9ce37:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-NFC5BX5N.js?v=ece9ce37:5478
+dispatchEvent @ chunk-NFC5BX5N.js?v=ece9ce37:5472
+dispatchDiscreteEvent @ chunk-NFC5BX5N.js?v=ece9ce37:5449
+TicketForm.tsx:172 Stake creation failed: Error: Transaction failed with the following error. Error checking transaction input objects: DependentPackageNotFound { package_id: 0xbec69147e6d51ff32994389b52eb3ee10a7414d07801bb9d5aaa1ba1c6e6b345 }
+    at dapp-interface.js:1:25280
+    at dapp-interface.js:1:16082
+    at e._next (dapp-interface.js:1:15515)
+    at e.next (dapp-interface.js:1:8180)
+    at dapp-interface.js:1:25196
+    at e._next (dapp-interface.js:1:15515)
+    at e.next (dapp-interface.js:1:8180)
+    at dapp-interface.js:1:16075
+    at e._next (dapp-interface.js:1:15515)
+    at e.next (dapp-interface.js:1:8180)

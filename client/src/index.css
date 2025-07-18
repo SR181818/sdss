@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 263 85% 70%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 11% 65%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 263 85% 70%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.75rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Glass effect */
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+}
+
+/* Gradient animations */
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* dSOC Cybersecurity Platform Design System */
+
+@layer base {
+  :root {
+    /* Main theme - Deep security blue with cyan accents */
+    --background: 210 24% 16%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 24% 18%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 24% 16%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Security blue */
+    --primary: 200 100% 45%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 200 100% 65%;
+
+    /* Secondary - Darker blue */
+    --secondary: 210 24% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted - Subtle grays */
+    --muted: 210 24% 14%;
+    --muted-foreground: 210 20% 65%;
+
+    /* Accent - Cyan for highlights */
+    --accent: 180 100% 50%;
+    --accent-foreground: 210 24% 16%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 24% 16%;
+
+    /* Form elements */
+    --border: 210 24% 24%;
+    --input: 210 24% 20%;
+    --ring: 200 100% 45%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-security: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(var(--secondary)));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px hsl(var(--background) / 0.5);
+    --shadow-accent: 0 0 20px hsl(var(--accent) / 0.4);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+  }
+
+  /* Light mode (for accessibility) */
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 210 24% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 16%;
+
+    --primary: 200 100% 35%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 24% 16%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 45%;
+
+    --accent: 180 100% 40%;
+    --accent-foreground: 210 40% 98%;
+
+    --border: 210 31% 91%;
+    --input: 210 31% 91%;
+    --ring: 200 100% 35%;
+
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 20px hsl(var(--foreground) / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  /* Security-themed components */
+  .security-card {
+    @apply bg-gradient-to-br from-card to-secondary border border-border/50 backdrop-blur-sm;
+    box-shadow: var(--shadow-card);
+  }
+
+  .security-button {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground transition-all duration-300;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .security-button:hover {
+    box-shadow: var(--shadow-accent);
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-open {
+    @apply bg-warning/20 text-warning border border-warning/30;
+  }
+
+  .status-in-progress {
+    @apply bg-primary/20 text-primary border border-primary/30;
+  }
+
+  .status-completed {
+    @apply bg-success/20 text-success border border-success/30;
+  }
+
+  .status-escalated {
+    @apply bg-destructive/20 text-destructive border border-destructive/30;
+  }
+
+  /* Animated elements */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  .slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+
+  .discord-gradient {
+    background: linear-gradient(135deg, #7289da 0%, #5865f2 50%, #3b82f6 100%);
+  }
+
+  .discord-card {
+    background: linear-gradient(135deg, rgba(114, 137, 218, 0.1) 0%, rgba(88, 101, 242, 0.1) 100%);
+    border: 1px solid rgba(114, 137, 218, 0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  .gaming-gradient {
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  }
+
+.dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 223 47% 11%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 263 85% 70%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 11% 65%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 263 85% 70%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
