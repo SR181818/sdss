@@ -27,21 +27,21 @@ export default function DashboardRouter() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Dashboard Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Security Operations Dashboard</h1>
-          <p className="mt-2 text-gray-600">Manage your security tickets and operations</p>
+          <h1 className="text-3xl font-bold text-white">Security Operations Dashboard</h1>
+          <p className="mt-2 text-gray-400">Manage your security tickets and operations</p>
         </div>
 
         {/* Balance Card */}
         <div className="mb-8">
-          <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="bg-gray-800 overflow-hidden shadow rounded-lg border border-gray-700">
             <div className="p-6">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                     <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" />
                     </svg>
@@ -49,8 +49,8 @@ export default function DashboardRouter() {
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className="text-sm font-medium text-gray-500 truncate">IOTA Balance</dt>
-                    <dd className="text-lg font-medium text-gray-900">
+                    <dt className="text-sm font-medium text-gray-400 truncate">IOTA Balance</dt>
+                    <dd className="text-lg font-medium text-white">
                       <NativeBalance />
                     </dd>
                   </dl>
@@ -62,7 +62,7 @@ export default function DashboardRouter() {
 
         {/* Navigation Tabs */}
         <div className="mb-8">
-          <div className="border-b border-gray-200">
+          <div className="border-b border-gray-700">
             <nav className="-mb-px flex space-x-8">
               {tabs.map((tab) => (
                 <button
@@ -70,14 +70,14 @@ export default function DashboardRouter() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`${
                     activeTab === tab.id
-                      ? 'border-indigo-500 text-indigo-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      ? 'border-blue-500 text-blue-400'
+                      : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
                   } whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm flex items-center`}
                 >
                   {tab.name}
                   {tab.count > 0 && (
                     <span className={`${
-                      activeTab === tab.id ? 'bg-indigo-100 text-indigo-600' : 'bg-gray-100 text-gray-900'
+                      activeTab === tab.id ? 'bg-blue-900 text-blue-400' : 'bg-gray-700 text-gray-300'
                     } ml-2 py-0.5 px-2.5 rounded-full text-xs font-medium`}>
                       {tab.count}
                     </span>
@@ -92,7 +92,7 @@ export default function DashboardRouter() {
         <div className="space-y-8">
           {activeTab === 'overview' && (
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="bg-white overflow-hidden shadow rounded-lg">
+              <div className="bg-gray-800 overflow-hidden shadow rounded-lg border border-gray-700">
                 <div className="p-5">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -104,15 +104,15 @@ export default function DashboardRouter() {
                     </div>
                     <div className="ml-5 w-0 flex-1">
                       <dl>
-                        <dt className="text-sm font-medium text-gray-500 truncate">My Tickets</dt>
-                        <dd className="text-lg font-medium text-gray-900">{myTickets.length}</dd>
+                        <dt className="text-sm font-medium text-gray-400 truncate">My Tickets</dt>
+                        <dd className="text-lg font-medium text-white">{myTickets.length}</dd>
                       </dl>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white overflow-hidden shadow rounded-lg">
+              <div className="bg-gray-800 overflow-hidden shadow rounded-lg border border-gray-700">
                 <div className="p-5">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -124,15 +124,15 @@ export default function DashboardRouter() {
                     </div>
                     <div className="ml-5 w-0 flex-1">
                       <dl>
-                        <dt className="text-sm font-medium text-gray-500 truncate">Open Tickets</dt>
-                        <dd className="text-lg font-medium text-gray-900">{open.length}</dd>
+                        <dt className="text-sm font-medium text-gray-400 truncate">Open Tickets</dt>
+                        <dd className="text-lg font-medium text-white">{open.length}</dd>
                       </dl>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white overflow-hidden shadow rounded-lg">
+              <div className="bg-gray-800 overflow-hidden shadow rounded-lg border border-gray-700">
                 <div className="p-5">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -144,15 +144,15 @@ export default function DashboardRouter() {
                     </div>
                     <div className="ml-5 w-0 flex-1">
                       <dl>
-                        <dt className="text-sm font-medium text-gray-500 truncate">Assigned to Me</dt>
-                        <dd className="text-lg font-medium text-gray-900">{assigned.length}</dd>
+                        <dt className="text-sm font-medium text-gray-400 truncate">Assigned to Me</dt>
+                        <dd className="text-lg font-medium text-white">{assigned.length}</dd>
                       </dl>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white overflow-hidden shadow rounded-lg">
+              <div className="bg-gray-800 overflow-hidden shadow rounded-lg border border-gray-700">
                 <div className="p-5">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -164,8 +164,8 @@ export default function DashboardRouter() {
                     </div>
                     <div className="ml-5 w-0 flex-1">
                       <dl>
-                        <dt className="text-sm font-medium text-gray-500 truncate">Pending Validation</dt>
-                        <dd className="text-lg font-medium text-gray-900">{submitted.length}</dd>
+                        <dt className="text-sm font-medium text-gray-400 truncate">Pending Validation</dt>
+                        <dd className="text-lg font-medium text-white">{submitted.length}</dd>
                       </dl>
                     </div>
                   </div>
@@ -176,18 +176,18 @@ export default function DashboardRouter() {
 
           {activeTab === 'client' && (
             <div className="space-y-6">
-              <div className="bg-white shadow rounded-lg">
-                <div className="px-6 py-4 border-b border-gray-200">
-                  <h3 className="text-lg font-medium text-gray-900">Submit New Security Ticket</h3>
-                  <p className="mt-1 text-sm text-gray-500">Upload evidence and create a new security incident ticket</p>
+              <div className="bg-gray-800 shadow rounded-lg border border-gray-700">
+                <div className="px-6 py-4 border-b border-gray-700">
+                  <h3 className="text-lg font-medium text-white">Submit New Security Ticket</h3>
+                  <p className="mt-1 text-sm text-gray-400">Upload evidence and create a new security incident ticket</p>
                 </div>
                 <div className="p-6">
                   <ClientView onComplete={refresh} />
                 </div>
               </div>
-              <div className="bg-white shadow rounded-lg">
-                <div className="px-6 py-4 border-b border-gray-200">
-                  <h3 className="text-lg font-medium text-gray-900">My Tickets</h3>
+              <div className="bg-gray-800 shadow rounded-lg border border-gray-700">
+                <div className="px-6 py-4 border-b border-gray-700">
+                  <h3 className="text-lg font-medium text-white">My Tickets</h3>
                 </div>
                 <div className="p-6">
                   <TicketList tickets={myTickets} />
@@ -197,10 +197,10 @@ export default function DashboardRouter() {
           )}
 
           {activeTab === 'analyst' && (
-            <div className="bg-white shadow rounded-lg">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-medium text-gray-900">Analyst Dashboard</h3>
-                <p className="mt-1 text-sm text-gray-500">Claim and work on security tickets</p>
+            <div className="bg-gray-800 shadow rounded-lg border border-gray-700">
+              <div className="px-6 py-4 border-b border-gray-700">
+                <h3 className="text-lg font-medium text-white">Analyst Dashboard</h3>
+                <p className="mt-1 text-sm text-gray-400">Claim and work on security tickets</p>
               </div>
               <div className="p-6">
                 <AnalystSection tickets={[...open, ...assigned]} onComplete={refresh} />
@@ -209,10 +209,10 @@ export default function DashboardRouter() {
           )}
 
           {activeTab === 'certifier' && (
-            <div className="bg-white shadow rounded-lg">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-medium text-gray-900">Validation Dashboard</h3>
-                <p className="mt-1 text-sm text-gray-500">Review and validate submitted reports</p>
+            <div className="bg-gray-800 shadow rounded-lg border border-gray-700">
+              <div className="px-6 py-4 border-b border-gray-700">
+                <h3 className="text-lg font-medium text-white">Validation Dashboard</h3>
+                <p className="mt-1 text-sm text-gray-400">Review and validate submitted reports</p>
               </div>
               <div className="p-6">
                 <CertifierSection tickets={submitted} onComplete={refresh} />
@@ -221,10 +221,10 @@ export default function DashboardRouter() {
           )}
 
           {activeTab === 'rewards' && (
-            <div className="bg-white shadow rounded-lg">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-medium text-gray-900">Stake & Rewards</h3>
-                <p className="mt-1 text-sm text-gray-500">Manage your stakes and claim rewards</p>
+            <div className="bg-gray-800 shadow rounded-lg border border-gray-700">
+              <div className="px-6 py-4 border-b border-gray-700">
+                <h3 className="text-lg font-medium text-white">Stake & Rewards</h3>
+                <p className="mt-1 text-sm text-gray-400">Manage your stakes and claim rewards</p>
               </div>
               <div className="p-6">
                 <StakeRewards />
